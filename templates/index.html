@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title> Stroke Predictor</title>
+  <link rel = "stylesheet" href = "{{url_for('static', filename='style.css')}}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict the chance of having a stroke</h1>
+    <div class = "textbo"
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	
+		<div class = "textbox2">
+		<label>Gender:</label>
+		<input type = "radio" name = "gender" value = "Male" required = "required"/> 
+		<span>Male</span>
+		<input type = "radio" name = "gender" value = "Female" required = "required"/> 
+		<span>Female</span>
+		<br>
+		</div>
+		
+		
+		<div class = "textbox">
+		<label>Age:</label> 
+		<input type = "number" name = "age" placeholder = "Enter your age" required = "required" />
+		</div>
+		
+		<div class = "textbox2">
+		<label>Hypertension?</label>
+		<input type = "radio" name = "hypertension" value = 1 required = "required"/> 
+		<span>Yes</span>
+		<input type = "radio" name = "hypertension" value = 0 required = "required"/> 
+		<span>No</span>
+		<br>
+		</div>
+		
+		<div class = "textbox2">
+		<label>Heart Disease?</label>
+		
+		<input type = "radio" name = "heart_disease" value = 1 required = "required"/> 
+		<span>Yes</span>
+		<input type = "radio" name = "heart_disease" value = 0 required = "required"/> 
+		<span>No</span>
+		<br>
+		</div>
+		
+		<div class = "textbox2">
+		<label>Ever married?</label>
+		
+		<input type = "radio" name = "ever_married" value = "Yes" required = "required"/> 
+		<span>Yes</span>
+		<input type = "radio" name = "ever_married" value = "No" required = "required"/> 
+		<span>No</span>
+		<br>
+		</div>
+		
+		<div class = "textbox2">
+		<label>Work type:</label>
+		
+		<input type = "radio" name = "work_type" value = "Private" required = "required"/> 
+		<span>Private job</span>
+		<input type = "radio" name = "work_type" value = "Self-employed" required = "required"/> 
+		<span>Self employed</span> <br>
+		<input type = "radio" name = "work_type" value = "Govt_job" required = "required"/> 
+		<span>Government job</span>
+		<input type = "radio" name = "work_type" value = "children" required = "required"/> 
+		<span>Home maker</span>
+		<input type = "radio" name = "work_type" value = "Never_worked" required = "required"/> 
+		<span>Never worked</span>
+		<br>
+		</div>
+		
+		<div class = "textbox2">
+		<label>Residence type:</label>
+		
+		<input type = "radio" name = "Residence_type" value = "Urban" required = "required"/> 
+		<span>Urban</span>
+		<input type = "radio" name = "Residence_type" value = "Rural" required = "required"/> 
+		<span>Rural</span>
+		<br>
+		</div>
+		
+		
+		<div class = "textbox">
+		<label>Average Glucose level:</label> 
+		<input type = "number" name = "avg_glucose_level" placeholder = "Enter your Glucose level" required = "required" /> 
+		</div>
+		
+		
+		
+		<div class = "textbox">
+		<label>BMI:</label> 
+		<input type = "number" name = "bmi" placeholder = "Enter your BMI" required = "required" /> 
+		</div>
+
+        <button type="submit" class="btn">Predict</button>
+		<h2>
+       {{ prediction_text }}
+		</h2>
+    </form>
+
+ </div>
+
+
+</body>
+</html>
