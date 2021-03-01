@@ -1,4 +1,4 @@
-# stroke-predictor
+# Stroke-predictor (Healthcare)
 This is a machine learning classification project. The dataset is taken from Kaggle.
 The model takes various inputs to predict if a person has a risk of stroke.
 
